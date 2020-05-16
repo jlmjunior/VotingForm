@@ -15,7 +15,7 @@
         </div>
         <div class="d-flex justify-content-center mt-2">
             <div class="p-2">
-                <asp:Button id="createNow" class="btn btn-primary btn-lg px-5 py-3" runat="server" Text="CREATE NOW" />
+                <a class="btn btn-primary btn-lg px-5 py-3" href="CreateVoting.aspx">CREATE NOW</a>
             </div>
         </div>
     </div>
