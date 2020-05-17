@@ -1,4 +1,4 @@
-﻿var countOptions = 3;
+﻿var countOptions = 4;
 
 function CreateInput() {
     h = countOptions;
@@ -9,7 +9,7 @@ function CreateInput() {
     input.setAttribute("type", "text");
     input.setAttribute("class", "form-control form-control-lg rounded-right mb-3");
     input.setAttribute("placeholder", "Option");
-    input.setAttribute("name", "option");
+    input.setAttribute("name", "option" + countOptions);
     input.required = true;
 
     listOptions.appendChild(input);
