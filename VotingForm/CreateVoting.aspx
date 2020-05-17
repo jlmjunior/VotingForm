@@ -15,12 +15,12 @@
         <hr class="mb-4"/>
 
         <div class="input-group mb-5">
-            <input type="text" class="form-control form-control-lg rounded-right" placeholder="Title" >
+            <input name="option" type="text" class="form-control form-control-lg rounded-right" placeholder="Title" required >
         </div>
 
         <div id="listOptions">
-            <input name="option" type="text" class="form-control form-control-lg rounded-right mb-3" placeholder="Option" >
-            <input name="option" type="text" class="form-control form-control-lg rounded-right mb-3" placeholder="Option" >
+            <input name="option" type="text" class="form-control form-control-lg rounded-right mb-3" placeholder="Option" required >
+            <input name="option" type="text" class="form-control form-control-lg rounded-right mb-3" placeholder="Option" required >
         </div>
 
         <div class="d-flex bd-highlight mt-1 mb-5">

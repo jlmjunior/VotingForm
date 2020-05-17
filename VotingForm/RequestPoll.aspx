@@ -3,8 +3,14 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderLayoutOne" runat="server">
     
-    <div class="container">
-        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+    <div class="container mt-5">
+        <div class="d-flex justify-content-center">
+            <div class="p-2">
+                <h1 class="display-4">
+                    <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+                </h1>
+            </div>
+        </div>
     </div>
     
 </asp:Content>

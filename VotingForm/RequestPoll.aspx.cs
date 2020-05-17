@@ -12,9 +12,16 @@ namespace VotingForm
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string teste = Request.Form["option"];
+            string values = Request.Form["option"];
 
-            Label1.Text = teste;
+            if (values != null)
+            {
+                Label1.Text = values;
+            }
+            else
+            {
+                Label1.Text = "Error: Access denied";
+            }
         }
     }
 }
