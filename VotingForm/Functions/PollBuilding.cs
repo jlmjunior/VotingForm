@@ -28,7 +28,15 @@ namespace VotingForm
                     poll.pollOption.Add(option);
                 }
 
-                
+                DAO.VotingFormBase sendPoll = new DAO.VotingFormBase();
+
+                bool noErrorPoll = sendPoll.CreatePoll(poll);
+                bool noErrorOptions = sendPoll.CreatePollOptions(poll); 
+
+                if(noErrorPoll && noErrorOptions)
+                {
+                    return true;
+                }
             }
 
             return false;
