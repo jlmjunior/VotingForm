@@ -10,6 +10,7 @@
     <script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/popper.min.js"></script>
     <link href="Styles/BodyOne.css" rel="stylesheet" />
+    <script src="JS/Master.js"></script>
     <asp:ContentPlaceHolder ID="headLayoutOne" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -18,15 +19,14 @@
         <div>
 
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a class="navbar-brand" href="#">Voting System</a>
+                <a class="navbar-brand" href="Home.aspx">Voting System</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-item nav-link active" href="Home.aspx">Home<span class="sr-only">(current)</span></a>
-                        <a class="nav-item nav-link" href="#">Features</a>
-                        <a class="nav-item nav-link" href="#">Pricing</a>
+                        <a id="navHome" class="nav-item nav-link active"  href="Home.aspx">Home</a>
+                        <a id="navCreateVoting" class="nav-item nav-link" href="CreateVoting.aspx">Create Poll</a>
                     </div>
                 </div>
             </nav>
