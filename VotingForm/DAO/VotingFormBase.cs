@@ -12,9 +12,24 @@ namespace VotingForm.DAO
     {
         SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings[""].ConnectionString);
 
+        public void CreatePoll(string tittle)
+        {
+
+        }
+
+        public void CreatePollOptions(List<string> options)
+        {
+
+        }
+
         public DataTable GetPoll(string idPoll)
         {
             return null;
+        }
+
+        public bool CheckIP(string IPCod)
+        {
+            return false;
         }
     }
 }
