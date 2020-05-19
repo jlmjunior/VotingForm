@@ -7,10 +7,10 @@ namespace VotingForm.Entity
 {
     public class Poll
     {
-        private string IdPoll { get; set; }
+        public string IdPoll { get; set; }
 
-        private string title { get; set; }
+        public string title { get; set; }
 
-        private List<Option> pollOption { get; set; }
+        public List<Option> pollOption { get; set; }
     }
 }

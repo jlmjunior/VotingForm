@@ -218,6 +218,7 @@
     <Compile Include="LayoutOne.Master.designer.cs">
       <DependentUpon>LayoutOne.Master</DependentUpon>
     </Compile>
+    <Compile Include="Functions\PollBuilding.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RequestPoll.aspx.cs">
       <DependentUpon>RequestPoll.aspx</DependentUpon>

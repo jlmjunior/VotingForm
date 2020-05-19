@@ -23,6 +23,7 @@ namespace VotingForm
                 if (key.StartsWith("option") && Request.Form[key].Length > 0)
                 {
                     //Label1.Text += Request.Form[key] + "<br/>";
+
                     values.Add(Request.Form[key]);
                     listVerification++;
                 }
@@ -30,10 +31,9 @@ namespace VotingForm
 
             if(values.Count > 2)
             {
-                foreach(string value in values)
-                {
-                    Label1.Text += value + "<br/>";
-                }
+                //PollBuilding buildPoll = new PollBuilding();
+
+                //buildPoll.
             }
             else
             {

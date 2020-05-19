@@ -7,8 +7,8 @@ namespace VotingForm.Entity
 {
     public class Option
     {
-        private string idOpition { get; set; }
+        public string idOption { get; set; }
 
-        private string question { get; set; }
+        public string question { get; set; }
     }
 }
