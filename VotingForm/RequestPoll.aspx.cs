@@ -31,9 +31,18 @@ namespace VotingForm
 
             if(values.Count > 2)
             {
-                //PollBuilding buildPoll = new PollBuilding();
+                PollBuilding exec = new PollBuilding();
 
-                //buildPoll.
+                if (exec.BuildPoll(values))
+                {
+                    Label1.Text = "Sucess";
+                }
+                else
+                {
+                    Label1.Text = "Error";
+                }
+
+
             }
             else
             {
