@@ -7,9 +7,12 @@
         <div class="d-flex justify-content-center">
             <div class="p-2">
                 <h1 class="display-4">
-                    <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+                    <asp:Label ID="statusMessage" runat="server" Text=""></asp:Label>
                 </h1>
             </div>
+        </div>
+        <div id="inpLinkPoll" class="mt-5" runat="server">
+            <asp:TextBox ID="pollLink" class="form-control mx-auto" runat="server" style="width:360px" ReadOnly="true"></asp:TextBox>
         </div>
     </div>
     

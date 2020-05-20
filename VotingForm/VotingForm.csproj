@@ -69,6 +69,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BuildPoll.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -194,6 +195,13 @@
     <Content Include="Scripts\popper-utils.js.map" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BuildPoll.aspx.cs">
+      <DependentUpon>BuildPoll.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BuildPoll.aspx.designer.cs">
+      <DependentUpon>BuildPoll.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CreateVoting.aspx.cs">
       <DependentUpon>CreateVoting.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -7,7 +7,7 @@ namespace VotingForm
 {
     public class PollBuilding
     {
-        public bool BuildPoll(List<string> pollValues)
+        public string BuildPoll(List<string> pollValues)
         {
             DateTime currentDate = DateTime.Now;
 
@@ -41,11 +41,11 @@ namespace VotingForm
 
                 if(noErrorPoll && noErrorOptions)
                 {
-                    return true;
+                    return poll.IdPoll;
                 }
             }
 
-            return false;
+            return "error";
         }
     }
 }
