@@ -87,8 +87,43 @@ namespace VotingForm.DAO
             return null;
         }
 
-        public bool CheckIP(string IPCod)
+        public bool CheckIP(string ipCod)
         {
+            return false;
+        }
+
+        public bool DetectPoll(string idPoll)
+        {
+            int result;
+
+            string command = "SELECT COUNT(*) FROM Poll WHERE id_poll = @idPoll";
+
+            SqlCommand cmd = new SqlCommand(command);
+
+            cmd.Parameters.AddWithValue("@idPoll", idPoll);
+            cmd.Connection = conn;
+            cmd.CommandType = CommandType.Text;
+
+            try
+            {
+                conn.Open();
+
+                result = (int)cmd.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            if(result == 1)
+            {
+                return true;
+            }
+
             return false;
         }
     }

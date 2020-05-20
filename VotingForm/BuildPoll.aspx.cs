@@ -13,13 +13,22 @@ namespace VotingForm
         {
             string value = Request.QueryString["value"];
 
-            if(value != null)
+            if(value != null && value != string.Empty)
             {
-                Label1.Text = "Success";
+                DAO.VotingFormBase dao = new DAO.VotingFormBase();
+
+                if (dao.DetectPoll(value))
+                {
+                    
+                }
+                else
+                {
+                    Label1.Text = "Ops: Poll not found";
+                }
             }
             else
             {
-                Label1.Text = "Fail";
+                Label1.Text = "Error: invalid value";
             }
         }
     }
