@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 
@@ -46,6 +47,36 @@ namespace VotingForm
             }
 
             return "error";
+        }
+
+        public Entity.Poll RequestPoll(string idPoll)
+        {
+            DAO.VotingFormBase dao = new DAO.VotingFormBase();
+
+            Entity.Poll poll = new Entity.Poll();
+            poll.pollOption = new List<Entity.Option>();
+
+            DataTable dt = dao.GetPoll(idPoll);
+
+            #region OBJECT CONTRUCTION
+            poll.IdPoll = dt.Rows[0]["id_poll"].ToString();
+            poll.title = dt.Rows[0]["title_poll"].ToString();
+
+            dt = dao.GetOptions(idPoll);
+
+            foreach(DataRow dr in dt.Rows)
+            {
+                Entity.Option option = new Entity.Option();
+
+                option.idOption = dr["id_option"].ToString();
+                option.question = dr["question"].ToString();
+                option.votes = (int)dr["votes"];
+
+                poll.pollOption.Add(option);
+            }
+            #endregion
+
+            return null;
         }
     }
 }

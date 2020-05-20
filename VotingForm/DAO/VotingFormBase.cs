@@ -84,7 +84,66 @@ namespace VotingForm.DAO
 
         public DataTable GetPoll(string idPoll)
         {
-            return null;
+            string command = "SELECT id_poll, title_poll FROM Poll WHERE id_poll = @idPoll";
+
+            DataTable dt = new DataTable();
+
+            SqlDataAdapter sda = new SqlDataAdapter();
+            SqlCommand cmd = new SqlCommand(command);
+
+            cmd.Parameters.AddWithValue("@idPoll", idPoll);
+            cmd.Connection = conn;
+            cmd.CommandType = CommandType.Text;
+
+            try
+            {
+                conn.Open();
+
+                sda.SelectCommand = cmd;
+                sda.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return dt;
+        }
+
+        public DataTable GetOptions(string idPoll)
+        {
+            string command = "SELECT * FROM Poll_options WHERE id_poll = @idPoll ORDER BY id_option";
+
+            DataTable dt = new DataTable();
+
+            SqlDataAdapter sda = new SqlDataAdapter();
+            SqlCommand cmd = new SqlCommand(command);
+
+            cmd.Parameters.AddWithValue("@idPoll", idPoll);
+            cmd.Connection = conn;
+            cmd.CommandType = CommandType.Text;
+
+            try
+            {
+                conn.Open();
+
+                sda.SelectCommand = cmd;
+                sda.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return dt;
         }
 
         public bool CheckIP(string ipCod)
