@@ -11,7 +11,16 @@ namespace VotingForm
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string value = Request.QueryString["value"];
 
+            if(value != null)
+            {
+                Label1.Text = "Success";
+            }
+            else
+            {
+                Label1.Text = "Fail";
+            }
         }
     }
 }
