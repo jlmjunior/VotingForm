@@ -185,5 +185,35 @@ namespace VotingForm.DAO
 
             return false;
         }
+
+        public int GetVotesOption(string idOption)
+        {
+            int votes;
+
+            string command = "SELECT votes FROM Poll_options WHERE id_option = @idOption";
+
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.Parameters.AddWithValue("@idOption", idOption);
+            cmd.Connection = conn;
+            cmd.CommandType = CommandType.Text;
+
+            try
+            {
+                conn.Open();
+
+                votes = (int)cmd.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return votes;
+        }
     }
 }

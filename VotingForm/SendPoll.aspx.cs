@@ -38,12 +38,12 @@ namespace VotingForm
                 }
                 else
                 {
-                    link = "Error";
+                    link = "error";
                 }
             }
             else
             {
-                link = "Error: Access denied";
+                link = "error";
             }
 
             Response.Redirect("RequestPoll.aspx/?value=" + link);

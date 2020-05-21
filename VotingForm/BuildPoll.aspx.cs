@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -38,7 +39,7 @@ namespace VotingForm
 
                         foreach (Entity.Option option in poll.pollOption)
                         {
-                            sb.Append("<button type=\"button\" class=\"list-group-item list-group-item-action d-flex justify-content-between align-items-center\" >" + option.question );
+                            sb.Append("<button  type=\"button\" class=\"list-group-item list-group-item-action d-flex justify-content-between align-items-center\" >" + option.question );
                             sb.Append("<span class=\"badge badge-primary badge-pill\" >" + option.votes + "</span>");
                             sb.Append("</button>");
                         }
@@ -68,6 +69,14 @@ namespace VotingForm
                 errorMessage.Text = "Invalid value";
                 errorPanel.Visible = true;
             }
+        }
+
+        [WebMethod]
+        public static int RequestVotesOption(string idOption)
+        {
+            DAO.VotingFormBase dao = new DAO.VotingFormBase();
+
+            return dao.GetVotesOption(idOption);
         }
     }
 }

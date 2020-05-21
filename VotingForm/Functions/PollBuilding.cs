@@ -58,7 +58,7 @@ namespace VotingForm
 
             try
             {
-                #region OBJECT CONTRUCTION
+                #region OBJECT BUILD
 
                 DataTable dt = dao.GetPoll(idPoll);
 
