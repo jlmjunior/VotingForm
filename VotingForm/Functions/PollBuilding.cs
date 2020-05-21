@@ -56,27 +56,35 @@ namespace VotingForm
             Entity.Poll poll = new Entity.Poll();
             poll.pollOption = new List<Entity.Option>();
 
-            DataTable dt = dao.GetPoll(idPoll);
-
-            #region OBJECT CONTRUCTION
-            poll.IdPoll = dt.Rows[0]["id_poll"].ToString();
-            poll.title = dt.Rows[0]["title_poll"].ToString();
-
-            dt = dao.GetOptions(idPoll);
-
-            foreach(DataRow dr in dt.Rows)
+            try
             {
-                Entity.Option option = new Entity.Option();
+                #region OBJECT CONTRUCTION
 
-                option.idOption = dr["id_option"].ToString();
-                option.question = dr["question"].ToString();
-                option.votes = (int)dr["votes"];
+                DataTable dt = dao.GetPoll(idPoll);
 
-                poll.pollOption.Add(option);
+                poll.IdPoll = dt.Rows[0]["id_poll"].ToString();
+                poll.title = dt.Rows[0]["title_poll"].ToString();
+
+                dt = dao.GetOptions(idPoll);
+
+                foreach(DataRow dr in dt.Rows)
+                {
+                    Entity.Option option = new Entity.Option();
+
+                    option.idOption = dr["id_option"].ToString();
+                    option.question = dr["question"].ToString();
+                    option.votes = (int)dr["votes"];
+
+                    poll.pollOption.Add(option);
+                }
+                #endregion
             }
-            #endregion
+            catch (Exception ex)
+            {
+                return null;
+            }
 
-            return null;
+            return poll;
         }
     }
 }

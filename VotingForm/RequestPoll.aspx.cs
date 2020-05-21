@@ -13,43 +13,19 @@ namespace VotingForm
         protected void Page_Load(object sender, EventArgs e)
         {
             inpLinkPoll.Visible = false;
-            //string values = Request.Form["option"];
+            string value = Request.QueryString["value"];
 
-            int listVerification = 0;
-
-            List<string> values = new List<string>();
-
-            foreach(string key in Request.Form.AllKeys)
+            if(value != null && value != string.Empty && value != "error")
             {
-                if (key.StartsWith("option") && Request.Form[key].Length > 0)
-                {
-                    //Label1.Text += Request.Form[key] + "<br/>";
+                statusMessage.Text = "Success";
 
-                    values.Add(Request.Form[key]);
-                    listVerification++;
-                }
-            }
+                pollLink.Text = "BuildPoll.aspx/?value=" + value;
 
-            if(values.Count > 2)
-            {
-                PollBuilding exec = new PollBuilding();
-                string adressPoll = exec.BuildPoll(values);
-
-                if (adressPoll != "error")
-                {
-                    statusMessage.Text = "Sucess";
-                    pollLink.Text = "BuildPoll.aspx/poll=" + adressPoll;
-
-                    inpLinkPoll.Visible = true;
-                }
-                else
-                {
-                    statusMessage.Text = "Error";
-                }
+                inpLinkPoll.Visible = true;
             }
             else
             {
-                statusMessage.Text = "Error: Access denied";
+                statusMessage.Text = "Failed request";
             }
 
         }

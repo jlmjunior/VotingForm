@@ -25,7 +25,7 @@
 
         <div class="d-flex justify-content-between mt-3 mb-5">
             <div><button id="newRow" onclick="return CreateInput()" class="btn btn-primary btn-lg px-5 py-3">New row</button></div>
-            <div><asp:Button id="Submit" class="btn btn-success btn-lg px-5 py-3" runat="server" Text="Submit" PostBackUrl="~/RequestPoll.aspx" /></div>
+            <div><asp:Button id="Submit" class="btn btn-success btn-lg px-5 py-3" runat="server" Text="Submit" PostBackUrl="~/SendPoll.aspx" /></div>
             <div><a class="btn btn-danger btn-lg px-5 py-3" href="CreateVoting.aspx">Reset</a></div>
         </div>
     </div>
