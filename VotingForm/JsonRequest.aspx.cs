@@ -12,20 +12,36 @@ namespace VotingForm
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string value = Request.QueryString["value"];
+            errorPanel.Visible = false;
+            string value;
 
-            Entity.Option option = new Entity.Option();
-            DAO.VotingFormBase dao = new DAO.VotingFormBase();
+            try
+            {
+                value = Request.QueryString["value"];
+            }
+            catch (Exception ex)
+            {
+                Response.ClearHeaders();
+                Response.Write("<h2 class=\"display - 4\">Request Block</h1>");
+                Response.End();
+                value = string.Empty;
+            }
+            
+            if(value != null && value != string.Empty)
+            {
+                Entity.Option option = new Entity.Option();
+                DAO.VotingFormBase dao = new DAO.VotingFormBase();
 
-            option.idOption = value;
-            option.votes = dao.GetVotesOption(value);
+                option.idOption = value;
+                option.votes = dao.GetVotesOption(value);
 
-            string jsonObject = JsonConvert.SerializeObject(option);
+                string jsonObject = JsonConvert.SerializeObject(option);
 
-            Response.Clear();
-            Response.ContentType = "application/json";
-            Response.Write(jsonObject);
-            Response.End();
+                Response.Clear();
+                Response.ContentType = "application/json";
+                Response.Write(jsonObject);
+                Response.End();
+            }
         }
     }
 }

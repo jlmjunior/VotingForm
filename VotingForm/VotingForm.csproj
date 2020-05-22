@@ -115,6 +115,7 @@
     <Content Include="JS\CreatingVoting.js" />
     <Content Include="JS\Master.js" />
     <Content Include="JS\Timer.js" />
+    <Content Include="RegisterVote.aspx" />
     <Content Include="RequestPoll.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -282,6 +283,13 @@
     </Compile>
     <Compile Include="Functions\PollBuilding.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegisterVote.aspx.cs">
+      <DependentUpon>RegisterVote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegisterVote.aspx.designer.cs">
+      <DependentUpon>RegisterVote.aspx</DependentUpon>
+    </Compile>
     <Compile Include="RequestPoll.aspx.cs">
       <DependentUpon>RequestPoll.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
