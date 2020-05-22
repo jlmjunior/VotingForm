@@ -1,5 +1,17 @@
 ﻿setInterval(function () {
-    var test = document.getElementById("teste");
 
-    test.innerHTML += "11";
+    var divElement = document.getElementsByName("option");
+
+    divElement.forEach(function (item, index) {
+
+        var link = "../JsonRequest.aspx/?value=" + item.id;
+
+        $.getJSON(link, function (result) {
+            item.innerHTML = result["votes"];
+        });
+
+    });
+
 }, 2000);
+
+

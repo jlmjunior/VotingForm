@@ -192,7 +192,7 @@ namespace VotingForm.DAO
 
             string command = "SELECT votes FROM Poll_options WHERE id_option = @idOption";
 
-            SqlCommand cmd = new SqlCommand();
+            SqlCommand cmd = new SqlCommand(command);
 
             cmd.Parameters.AddWithValue("@idOption", idOption);
             cmd.Connection = conn;
