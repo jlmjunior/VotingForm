@@ -24,7 +24,6 @@
         <div class="mt-2">
             <asp:Literal ID="litOptions" runat="server"></asp:Literal>
         </div>
-        
     </div>
 
 </asp:Content>

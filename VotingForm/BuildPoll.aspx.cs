@@ -39,8 +39,8 @@ namespace VotingForm
 
                         foreach (Entity.Option option in poll.pollOption)
                         {
-                            sb.Append("<button type=\"button\" class=\"list-group-item list-group-item-action d-flex justify-content-between align-items-center\" >" + option.question );
-                            sb.Append("<span id=\"" + option.idOption + "\" name=\"option\" class=\"badge badge-primary badge-pill\" >" + option.votes + "</span>");
+                            sb.Append("<button onclick=\"SendVote(this);\" id=\"" + option.idOption + "\" name=\"option\" type=\"button\" class=\"list-group-item list-group-item-action d-flex justify-content-between align-items-center\" >" + option.question );
+                            sb.Append("<span id=\"" + option.idOption + "b\" class=\"badge badge-primary badge-pill\" >" + option.votes + "</span>");
                             sb.Append("</button>");
                         }
 
@@ -69,14 +69,6 @@ namespace VotingForm
                 errorMessage.Text = "Invalid value";
                 errorPanel.Visible = true;
             }
-        }
-
-        [WebMethod]
-        public static string RequestVotesOption(string idOption)
-        {
-            //DAO.VotingFormBase dao = new DAO.VotingFormBase();
-
-            return "1";
         }
     }
 }

@@ -229,6 +229,7 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="SendVote.aspx" />
     <Content Include="Styles\BodyOne.css" />
     <Content Include="Web.config" />
     <Content Include="Scripts\umd\popper.min.js.map" />
@@ -303,6 +304,13 @@
     </Compile>
     <Compile Include="SendPoll.aspx.designer.cs">
       <DependentUpon>SendPoll.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SendVote.aspx.cs">
+      <DependentUpon>SendVote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SendVote.aspx.designer.cs">
+      <DependentUpon>SendVote.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

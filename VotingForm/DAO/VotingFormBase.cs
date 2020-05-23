@@ -215,5 +215,33 @@ namespace VotingForm.DAO
 
             return votes;
         }
+
+        public bool SendVote(string idOption)
+        {
+            string command = "UPDATE Poll_options SET votes = ((SELECT votes FROM Poll_options WHERE id_option = @idOption) +1) WHERE id_option = @idOption";
+
+            SqlCommand cmd = new SqlCommand(command);
+
+            cmd.Parameters.AddWithValue("@idOption", idOption);
+            cmd.Connection = conn;
+            cmd.CommandType = CommandType.Text;
+
+            try
+            {
+                conn.Open();
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return true;
+        }
     }
 }
