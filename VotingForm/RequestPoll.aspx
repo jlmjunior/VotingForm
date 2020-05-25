@@ -12,7 +12,7 @@
             </div>
         </div>
         <div id="inpLinkPoll" class="mt-5" runat="server">
-            <asp:TextBox ID="pollLink" class="form-control mx-auto" runat="server" style="width:360px" ReadOnly="true"></asp:TextBox>
+            <asp:TextBox ID="pollLink" class="form-control mx-auto" runat="server" style="width:460px" ReadOnly="true"></asp:TextBox>
         </div>
     </div>
     

@@ -9,7 +9,7 @@
         <div class="d-flex justify-content-center">
             <div class="p-2">
                 <h1 class="display-4">
-                    Create your table! it's fast!
+                    Create your poll! it's fast!
                 </h1>
             </div>
         </div>

@@ -25,7 +25,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a id="navHome" class="nav-item nav-link active"  href="../Default.aspx">Home</a>
+                        <a id="navHome" class="nav-item nav-link"  href="../Default.aspx">Home</a>
                         <a id="navCreateVoting" class="nav-item nav-link" href="../CreateVoting.aspx">Create Poll</a>
                     </div>
                 </div>

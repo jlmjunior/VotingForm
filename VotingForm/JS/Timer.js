@@ -13,7 +13,7 @@
 
     });
 
-}, 2000);
+}, 1000);
 
 function SendVote(op) {
     var option = op.id;
