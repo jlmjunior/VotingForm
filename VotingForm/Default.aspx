@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/LayoutOne.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="VotingForm.Home" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/LayoutOne.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="VotingForm.Home" %>
 <asp:Content id="ContentHeadHome" ContentPlaceHolderID="headLayoutOne" runat="server">
 
 </asp:Content>
