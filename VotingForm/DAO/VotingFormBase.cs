@@ -146,9 +146,70 @@ namespace VotingForm.DAO
             return dt;
         }
 
-        public bool CheckIP(string ipCod)
+        public bool CheckIP(string userIp, string idOption)
         {
-            return false;
+            int result;
+
+            string command = "SELECT COUNT(*) FROM Ip_register WHERE id_poll = (SELECT id_poll FROM Poll_options WHERE id_option = @idOption) AND ip_cod = @userIp";
+
+            SqlCommand cmd = new SqlCommand(command);
+
+            cmd.Parameters.AddWithValue("@idOption", idOption);
+            cmd.Parameters.AddWithValue("@userIp", userIp);
+            cmd.Connection = conn;
+            cmd.CommandType = CommandType.Text;
+
+            try
+            {
+                conn.Open();
+
+                result = (int)cmd.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                result = 0;
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            if(result > 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+            
+        }
+
+        public void SendIP(string userIp, string idOption)
+        {
+            string command = "INSERT INTO Ip_register (ip_cod, id_poll, creation_date) VALUES (@userIp, (SELECT id_poll FROM Poll_options WHERE id_option = @idOption), GETDATE())";
+
+            SqlCommand cmd = new SqlCommand(command);
+
+            cmd.Parameters.AddWithValue("@userIp", userIp);
+            cmd.Parameters.AddWithValue("@idOption", idOption);
+            cmd.Connection = conn;
+            cmd.CommandType = CommandType.Text;
+
+            try
+            {
+                conn.Open();
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
 
         public bool DetectPoll(string idPoll)

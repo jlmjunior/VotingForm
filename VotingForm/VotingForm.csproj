@@ -113,7 +113,6 @@
     <Content Include="Default.aspx" />
     <Content Include="JsonRequest.aspx" />
     <Content Include="JS\CreatingVoting.js" />
-    <Content Include="JS\Master.js" />
     <Content Include="JS\Timer.js" />
     <Content Include="RegisterVote.aspx" />
     <Content Include="RequestPoll.aspx" />
@@ -254,6 +253,7 @@
     <Compile Include="BuildPoll.aspx.designer.cs">
       <DependentUpon>BuildPoll.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Controller\UserController.cs" />
     <Compile Include="CreateVoting.aspx.cs">
       <DependentUpon>CreateVoting.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -285,7 +285,7 @@
     <Compile Include="LayoutOne.Master.designer.cs">
       <DependentUpon>LayoutOne.Master</DependentUpon>
     </Compile>
-    <Compile Include="Functions\PollBuilding.cs" />
+    <Compile Include="Controller\PollBuilding.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegisterVote.aspx.cs">
       <DependentUpon>RegisterVote.aspx</DependentUpon>

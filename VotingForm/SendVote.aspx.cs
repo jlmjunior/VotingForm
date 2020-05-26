@@ -15,9 +15,32 @@ namespace VotingForm
 
             if(value != null && value != string.Empty)
             {
+                string userIp = string.Empty;
+
+                if (HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"] != null)
+                {
+                    userIp = HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"].ToString();
+                }
+                else if (HttpContext.Current.Request.UserHostAddress.Length != 0)
+                {
+                    userIp = HttpContext.Current.Request.UserHostAddress;
+                }
+
+                int index = userIp.IndexOf(':');
+
+                if(index > 0)
+                {
+                    userIp = userIp.Substring(0, index);
+                }
+
                 DAO.VotingFormBase dao = new DAO.VotingFormBase();
 
-                dao.SendVote(value);
+                if (dao.CheckIP(userIp, value))
+                {
+                    dao.SendVote(value);
+                    dao.SendIP(userIp, value);
+                }
+
             }
         }
     }
