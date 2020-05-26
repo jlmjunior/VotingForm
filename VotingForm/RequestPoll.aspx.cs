@@ -19,7 +19,7 @@ namespace VotingForm
             {
                 statusMessage.Text = "Success";
 
-                pollLink.Text = "votingform.gearhostpreview.com/BuildPoll.aspx/?value=" + value;
+                pollLink.Text = "votingform.gear.host/BuildPoll.aspx/?value=" + value;
 
                 inpLinkPoll.Visible = true;
             }
