@@ -1,4 +1,8 @@
-﻿body {
+﻿html {
+    word-break: break-word;
+}
+
+body {
     background-color: #F2F2F2;
 }
 
