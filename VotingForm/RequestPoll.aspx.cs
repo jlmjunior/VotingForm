@@ -30,5 +30,10 @@ namespace VotingForm
             }
 
         }
+
+        protected void redirectToPoll_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("https://" + pollLink.Text);
+        }
     }
 }

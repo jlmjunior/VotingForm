@@ -8,7 +8,7 @@
     <div class="container mt-4">
         <div class="d-flex justify-content-center mb-3">
             <div class="p-2">
-                <h5 class="display-4">CREATING POLL</h5>
+                <h5 class="display-4 mediumText">CREATING POLL</h5>
             </div>
         </div>
 

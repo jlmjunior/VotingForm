@@ -16,8 +16,8 @@
 
     <div class="container mt-5" runat="server" id="successPanel">
         <div class="card-body">
-            <h4 class="display-4">
-                <asp:Label ID="pollTitle" runat="server" Text="Title"></asp:Label>
+            <h4 class="display-4 mediumText">
+                <asp:Label id="pollTitle" runat="server" Text="Title"></asp:Label>
             </h4>
         </div>
 

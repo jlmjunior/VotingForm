@@ -6,4 +6,8 @@
     body div .box{
         width: 90% !important;
     }
+
+    .mediumText {
+        font-size: 2em !important;
+    }
 }

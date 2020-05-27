@@ -11,10 +11,13 @@
                 </h1>
             </div>
         </div>
-        <div id="inpLinkPoll" class="mt-5" runat="server">
+        <div id="inpLinkPoll" class="mt-5 mb-3" runat="server">
             <div class="d-flex justify-content-center">
                 <asp:TextBox id="pollLink" class="form-control box" runat="server" style="width:50%" ReadOnly="true" ClientIDMode="Static"></asp:TextBox>
                 <i onClick="CopyLink()" class="far fa-copy fa-2x copyIcon ml-2"></i>
+            </div>
+            <div class="d-flex justify-content-center px-5 py-3">
+                <asp:Button id="redirectToPoll" class="btn btn-outline-secondary btn-lg" runat="server" Text="Redirect" OnClick="redirectToPoll_Click" />
             </div>
         </div>
     </div>
