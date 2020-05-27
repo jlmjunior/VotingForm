@@ -1,3 +1,20 @@
 ﻿body {
     background-color: #F2F2F2;
 }
+
+.box {
+    width: 50%;
+}
+
+.copyIcon {
+    color: #B2B2B2;
+}
+
+.copyIcon:hover {
+    cursor: pointer;
+    color: #336699;
+    -webkit-transition: color 0.2s;
+    -moz-transition: color 0.2s;
+    -o-transition: color 0.2s;
+    transition: color 0.2s;
+}

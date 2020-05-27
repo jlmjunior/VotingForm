@@ -17,16 +17,16 @@
         <div class="input-group mb-5">
             <input name="option1" type="text" class="form-control form-control-lg rounded-right" placeholder="Title" required >
         </div>
-
+        
         <div id="listOptions">
             <input name="option2" type="text" class="form-control form-control-lg rounded-right mb-3" placeholder="Option" required >
             <input name="option3" type="text" class="form-control form-control-lg rounded-right mb-3" placeholder="Option" required >
         </div>
 
         <div class="d-flex justify-content-between mt-3 mb-5">
-            <div><button id="newRow" onclick="return CreateInput()" class="btn btn-primary btn-lg px-5 py-3">New row</button></div>
-            <div><asp:Button id="Submit" class="btn btn-success btn-lg px-5 py-3" runat="server" Text="Submit" PostBackUrl="~/SendPoll.aspx" /></div>
-            <div><a class="btn btn-danger btn-lg px-5 py-3" href="CreateVoting.aspx">Reset</a></div>
+            <div><button id="newRow" onclick="return CreateInput()" class="btn btn-primary btn-lg px-5 py-3 buttonMobile">New row</button></div>
+            <div><asp:Button id="Submit" class="btn btn-success btn-lg px-5 py-3 buttonMobile" runat="server" Text="Submit" PostBackUrl="~/SendPoll.aspx" /></div>
+            <div><a class="btn btn-danger btn-lg px-5 py-3 buttonMobile" href="CreateVoting.aspx">Reset</a></div>
         </div>
     </div>
 

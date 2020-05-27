@@ -4,13 +4,20 @@
 
 <html>
 <head runat="server">
-    <title></title>
+    <title>PoLL</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
     <link href="/Content/bootstrap.min.css" rel="stylesheet" />
     <script src="/Scripts/jquery-3.0.0.min.js"></script>
     <script src="/Scripts/bootstrap.min.js"></script>
     <script src="/Scripts/popper.min.js"></script>
     <link href="/Styles/BodyOne.css" rel="stylesheet" />
+    <link href="/Styles/Handheld.css" rel="stylesheet" />
     <script src="/JS/Master.js"></script>
+    <link href="/Fontawesome/css/all.min.css" rel="stylesheet" />
+    <script src="/Fontawesome/js/all.min.js"></script>
+    <script src="/JS/Controller.js"></script>
     <asp:ContentPlaceHolder ID="headLayoutOne" runat="server">
     </asp:ContentPlaceHolder>
 </head>

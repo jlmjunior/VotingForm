@@ -1,0 +1,9 @@
+﻿@media (max-width: 575.98px) {
+    body div .buttonMobile {
+        padding: 1rem 1rem !important;
+    }
+
+    body div .box{
+        width: 90% !important;
+    }
+}
