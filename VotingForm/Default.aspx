@@ -20,4 +20,11 @@
         </div>
     </div>
 
+    <footer class="homeFooter">
+        <div class="container">
+            <hr />
+            <p class="text-muted">© PoLL 2020</p>
+        </div>
+    </footer>
+
 </asp:Content>
